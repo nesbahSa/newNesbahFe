@@ -14,13 +14,22 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
 
-  { href: '/', label: 'Home' },
+  // { href: '/', label: 'Home' },
+  { href: '/', label: 'الصفحة رئيسية' },
+
   /*{ href: '/consultancy', label: 'Consultancy' },*/
   /*{ href: '/retail', label: 'Retail' },*/
-  { href: '/contact', label: 'Partner with Nesbah' },
-  { href: '/FAQ', label: 'FAQ' },
+
+  // { href: '/contact', label: 'Partner with Nesbah' },
+  { href: '/contact', label: 'شركائنا' },
+
+  // { href: '/FAQ', label: 'FAQ' },
+  { href: '/FAQ', label: 'الأسئلة الشائعة' },
+
   /*{ href: '/blog', label: 'Blog' },*/
-  { href: '/login', label: 'Login' },
+
+  // { href: '/login', label: 'Login' },
+  { href: '/login', label: 'تسجيل الدخول' },
 ]
 
 function DesktopNav() {
@@ -53,7 +62,7 @@ function MobileNavButton() {
 
 function MobileNav() {
   return (
-    <DisclosurePanel className="lg:hidden">
+    <DisclosurePanel className="lg:hidden bg-white/30 rounded-xl px-3">
       <div className="flex flex-col gap-6 py-4">
         {links.map(({ href, label }, linkIndex) => (
           <motion.div

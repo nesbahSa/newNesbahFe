@@ -10,17 +10,23 @@ function CallToAction() {
   return (
     <div className="relative pb-16 pt-20 text-center sm:py-24">
       <hgroup>
-        <Subheading>Get started</Subheading>
+        <Subheading>
+          {/* Get started */}
+          ابدأ الآن
+          </Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-          Ready to expand your business?
+          {/* Ready to expand your business? */}
+          هل أنت مستعد لتوسيع نطاق عملك؟
           <br />
-          Start with Nesbah today
+          {/* Start with Nesbah today */}
+          ابدأ مع نسبه اليوم
         </p>
       </hgroup>
 
       <div className="mt-6">
         <Button className="w-full sm:w-auto" href="/register">
-          Get started
+          {/* Get started */}
+          ابدأ الآن
         </Button>
       </div>
     </div>
@@ -50,27 +56,54 @@ function Sitemap() {
   return (
     <>
       <div>
-        <SitemapHeading>For business owner</SitemapHeading>
+        <SitemapHeading>
+          {/* For business owner */}
+          لاصحاب الاعمال
+          </SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/login">Register</SitemapLink>
+          <SitemapLink href="/login">
+          {/* Register */}
+          سجل
+          </SitemapLink>
 {/*          <SitemapLink href="/consultancy">Consultancy</SitemapLink>*/}
-          <SitemapLink href="/FAQ">FAQ</SitemapLink>
+          <SitemapLink href="/FAQ">
+          {/* FAQ */}
+          الأسئلة الشائعة
+          </SitemapLink>
         </SitemapLinks>
       </div>
         <div>
-            <SitemapHeading>For partner</SitemapHeading>
+            <SitemapHeading>
+              {/* For partner */}
+              للشركاء
+              </SitemapHeading>
             <SitemapLinks>
-                <SitemapLink href="/contact">Partner with us</SitemapLink>
-                <SitemapLink href="/FAQ">FAQ</SitemapLink>
+                <SitemapLink href="/contact">
+                {/* Partner with us */}
+                  شراكة مع نسبة
+                </SitemapLink>
+                <SitemapLink href="/FAQ">
+                {/* FAQ */}
+                الأسئلة الشائعة
+                </SitemapLink>
             </SitemapLinks>
         </div>
       <div>
-        <SitemapHeading>Reach us</SitemapHeading>
+        <SitemapHeading>
+          {/* Reach us */}
+          اتصل بنا
+          </SitemapHeading>
           <p className="mt-6"> admin@nesbah.net</p>
       </div>
         <div>
-            <SitemapHeading>Location</SitemapHeading>
-            <p className="mt-6"> Riyadh, Saudi Arabia</p>
+            <SitemapHeading>
+              {/* Location */}
+              موقعنا
+              </SitemapHeading>
+            <p className="mt-6">
+              {/* Riyadh, Saudi Arabia */}
+              الرياض, السعودية
+              </p>
         </div>
     </>
   )
@@ -131,7 +164,8 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Nesbah.
+      {/* Nesbah. */}
+      &copy; {new Date().getFullYear()} نسبة
     </div>
   )
 }

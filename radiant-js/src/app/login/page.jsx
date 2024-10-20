@@ -26,12 +26,19 @@ export default function Login() {
                 <Mark className="h-9 fill-black" />
               </Link>
             </div>
-            <h1 className="mt-8 text-base/6 font-medium">Welcome back!</h1>
+            <h1 className="mt-8 text-base/6 font-medium">
+            {/* Welcome back! */}
+            مرحبا بك
+            </h1>
             <p className="mt-1 text-sm/5 text-gray-600">
-              Sign in to your account to continue.
-            </p>
+              {/* Sign in to your account to continue. */}
+              تسجيل الدخول للحساب للمتابعة 
+              </p>
             <Field className="mt-8 space-y-3">
-              <Label className="text-sm/5 font-medium">Email</Label>
+              <Label className="text-sm/5 font-medium">
+              {/* Email */}
+              البريد الإلكتروني
+              </Label>
               <Input
                 required
                 autoFocus
@@ -45,7 +52,10 @@ export default function Login() {
               />
             </Field>
             <Field className="mt-8 space-y-3 relative">
-              <Label className="text-sm/5 font-medium">Password</Label>
+              <Label className="text-sm/5 font-medium">
+              {/* Password */}
+              كلمة المرور
+              </Label>
               <div className="relative">
                 <Input
                     required
@@ -62,7 +72,8 @@ export default function Login() {
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700 focus:outline-none"
                 >
-                  {showPassword ? 'Hide' : 'Show'}
+                  {/* {showPassword ? 'Hide' : 'Show'} */}
+                  {showPassword ? 'اخفاء' : 'اظهار'}
                 </button>
               </div>
             </Field>
@@ -79,22 +90,30 @@ export default function Login() {
                 >
                   <CheckIcon className="fill-white opacity-0 group-data-[checked]:opacity-100" />
                 </Checkbox>
-                <Label>Remember me</Label>
+                <Label>
+                  {/* Remember me */}
+                  تذكرني
+                  </Label>
               </Field>
               <Link href="#" className="font-medium hover:text-gray-600">
-                Forgot password?
+                {/* Forgot password? */}
+                هل نسيت كلمة المرور؟
               </Link>
             </div>
             <div className="mt-8">
               <Button type="submit" className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full px-6 py-3 transition ease-in-out duration-200 hover:bg-opacity-50 hover:shadow-lg hover:shadow-pink-500/50">
-              Sign in
+              {/* Sign in */}
+              تسجيل الدخول
               </Button>
             </div>
           </form>
           <div className="m-1.5 rounded-lg bg-gray-50 py-4 text-center text-sm/5 ring-1 ring-black/5">
-            Not a member?{' '}
+            {/* Not a member? */}
+            ليس لديك حساب ؟
+            {' '}
             <Link href="/register" className="font-medium hover:text-gray-600">
-              Create an account
+              {/* Create an account */}
+              إنشاء حساب
             </Link>
           </div>
         </div>

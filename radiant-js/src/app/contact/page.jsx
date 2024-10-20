@@ -157,31 +157,33 @@ function ContactForm() {
         <FadeIn className="lg:order-last">
             <form ref={form} onSubmit={sendEmail}>
                 <h2 className="font-display text-base font-semibold text-neutral-950">
-                    Your queries
+                    {/* Your queries */}
+                    استفساراتك
                 </h2>
                 <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-                    <TextInput label="Name" name="name" autoComplete="name" required />
+                    <TextInput label="الاسم" name="name" autoComplete="name" required />
                     <TextInput
-                        label="Email"
+                        label="البريد الإلكتروني"
                         type="email"
                         name="email"
                         autoComplete="email"
                         required
                     />
                     <TextInput
-                        label="Company"
+                        label="اسم الشركة"
                         name="company"
                         autoComplete="organization"
                         required
                     />
-                    <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" required />
-                    <TextArea label="Message" name="message" />
+                    <TextInput label="الهاتف" type="tel" name="phone" autoComplete="tel" required />
+                    <TextArea label="الرسالة" name="message" />
                 </div>
                 <Button
                     type="submit"
                     className="mt-10 mb-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full px-6 py-3 transition ease-in-out duration-200 hover:bg-opacity-50 hover:shadow-lg hover:shadow-pink-500/50"
                 >
-                    Let’s work together
+                    {/* Let’s work together */}
+                    للتعاون معنا
                 </Button>
             </form>
 
@@ -195,17 +197,21 @@ function ContactDetails() {
         <FadeIn>
 
             <h2 className="font-display text-base font-bold text-neutral-950">
-                Who can partner?
+                {/* Who can partner? */}
+                من يمكنه الشراكة؟
             </h2>
             <p className="mt-6 text-base  text-neutral-1200">
-                We invite financial institutions, banks, and financial companies to partner with us. Together, we can expand your reach, innovate your services, and drive mutual growth.
+                {/* We invite financial institutions, banks, and financial companies to partner with us. Together, we can expand your reach, innovate your services, and drive mutual growth. */}
+                ندعو المؤسسات المالية والبنوك والشركات المالية للشراكة معنا. معًا، يمكننا توسيع نطاقكم وابتكار خدماتكم وتحقيق النمو المتبادل.
             </p>
 
             <Border className="mt-16 pt-16">
                 <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
                     {[
-                        ['Email', 'admin@nesbah.com.sa'],
-                        ['Address', 'Riyadh, Saudi Arabia'],
+                        // ['Email', 'admin@nesbah.com.sa'],
+                        // ['Address', 'Riyadh, Saudi Arabia'],
+                        ['البريد الإلكتروني', 'admin@nesbah.com.sa'],
+                        ['العنوان', 'الرياض, السعودية'],
                     ].map(([label, email]) => (
                         <div key={email}>
                             <dt className="font-semibold text-neutral-950">{label}</dt>
@@ -239,8 +245,15 @@ export default function Contact() {
                 <Container>
                     <Navbar />
                 </Container>
-                <PageIntro className= "py-0.10" eyebrow="Contact us" title={<span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Partner with Nesbah</span>}>
-                    <p>Our mission is to bridge the gap between financial service providers and the market's evolving needs. Join us as we collaborate to shape the future of banking and finance.</p>
+                {/* Contact us */}
+                <PageIntro className= "py-0.10" eyebrow="تواصل معنا" title={<span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    {/* Partner with Nesbah */}
+                    شركاء نسبة
+                    </span>}>
+                    <p>
+                        {/* Our mission is to bridge the gap between financial service providers and the market's evolving needs. Join us as we collaborate to shape the future of banking and finance. */}
+                        مهمتنا هي سد الفجوة بين مقدمي الخدمات المالية واحتياجات السوق المتطورة. انضم إلينا ونحن نتعاون لتشكيل مستقبل الخدمات المصرفية والتمويل
+                        </p>
                 </PageIntro>
 
                 <Container className="mt-12 sm:mt-20 lg:mt-28">

@@ -126,10 +126,14 @@ const tiers = [
 function Header() {
   return (
     <Container className="mt-16 mb-16">
-      <Heading as="h1">Got question?</Heading>
+      <Heading as="h1">
+        {/* Got question? */}
+        هل لديك سؤال؟
+        </Heading>
       <Lead className="mt-6 max-w-3xl">
-        Our FAQ section provides insights into our partnership approach
-      </Lead>
+        {/* Our FAQ section provides insights into our partnership approach */}
+        يوفر قسم الأسئلة الشائعة لدينا نظرة ثاقبة على نهج الشراكة الخاص بنا
+        </Lead>
     </Container>
   )
 }
@@ -165,14 +169,19 @@ function Testimonial() {
             <figure className="mx-auto flex max-w-xl flex-col gap-16 max-lg:text-center">
               <blockquote>
                 <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”'] lg:text-4xl">
-                  Nesbah ensures excellent customer service by providing customized financial solutions and reliable support to meet your business goals.
+                  {/* Nesbah ensures excellent customer service by providing customized financial solutions and reliable support to meet your business goals. */}
+                  تضمن شركة نسبه خدمة عملاء ممتازة من خلال توفير حلول مالية مخصصة ودعم موثوق به لتحقيق أهداف عملك.
                 </p>
               </blockquote>
               <figcaption className="mt-auto">
-                <p className="text-sm/6 font-medium text-white">Yousef Aljameely</p>
+                <p className="text-sm/6 font-medium text-white">
+                {/* Yousef Aljameely */}
+                يوسف الجميلي
+                </p>
                 <p className="text-sm/6 font-medium">
                   <span className="bg-gradient-to-r from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff] bg-clip-text text-transparent">
-                    Founder
+                    {/* Founder */}
+                    المؤسس
                   </span>
                 </p>
               </figcaption>
@@ -189,81 +198,95 @@ function FrequentlyAskedQuestions() {
     <Container>
       <section id="faqs" className="scroll-mt-8">
         <Subheading className="text-center">
-          Frequently asked questions
-        </Subheading>
+          {/* Frequently asked questions */}
+          الاسئلة الشائعة
+          </Subheading>
         <Heading as="div" className="mt-2 text-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-          Your questions answered.
-        </Heading>
+          {/* Your questions answered. */}
+          الإجابة على أسئلتك
+          </Heading>
         <div className="mx-auto mb-32 mt-16 max-w-xl space-y-12">
-          <dl>
-            <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              What exactly does Nesbah offer to financial institutions?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Nesbah provides a platform for financial institutions to connect with a wider customer base, offering innovative solutions like lead generation, risk acceptance criteria benchmarking, and more, tailored to enhance the efficiency and reach of your services.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              How does partnering with Nesbah benefit our institution?
-            </dt>
-
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Partnering with Nesbah allows your institution to access new market segments, leverage cutting-edge fintech solutions, and improve service offerings through strategic collaborations and insights.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Is Nesbah's platform compatible with existing banking systems?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, our platform is designed to integrate seamlessly with existing banking systems, ensuring a smooth transition and continuity in your operations.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              What kind of support can we expect from Nesbah?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              We offer comprehensive support to our partners, including technical integration assistance, strategic planning advice, and ongoing operational support.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              How does Nesbah ensure the confidentiality and security of data?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              We adhere to stringent data security protocols and ensure all partner and customer information is handled with the utmost confidentiality and in compliance with relevant regulations.
-            </dd>
-          </dl>
-
-          <dl>
-            <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Can we customize the services offered through Nesbah?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Absolutely. We work closely with our partners to tailor our services to your specific needs and objectives.
-            </dd>
-          </dl>
-
-          <dl>
-            <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              What is the process to become a partner with Nesbah?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              To become a partner, simply email and tell us about yourself. Our team will then reach out to discuss potential synergies and the next steps.
-            </dd>
-          </dl>
-
-          <dl>
-            <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Are there any fees associated with partnering with Nesbah?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              The fee structure can vary based on the services and level of customization required. We recommend discussing this in detail during our initial consultations.
-            </dd>
-          </dl>
-        </div>
+        <dl>
+          <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {/* What exactly does Nesbah offer to financial institutions? */}
+            ماذا تقدم نسبة بالضبط للمؤسسات المالية؟
+          </dt>
+          <dd className="mt-4 text-sm/6 text-gray-600">
+            {/* Nesbah provides a platform for financial institutions to connect with a wider customer base, offering innovative solutions like lead generation, risk acceptance criteria benchmarking, and more, tailored to enhance the efficiency and reach of your services. */}
+            توفر نسبة منصة للمؤسسات المالية للتواصل مع قاعدة عملاء أوسع، مع تقديم حلول مبتكرة مثل توليد العملاء المحتملين وتقييم معايير قبول المخاطر، وغيرها، لتعزيز كفاءة ووصول خدماتكم.
+          </dd>
+        </dl>
+        <dl>
+          <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {/* How does partnering with Nesbah benefit our institution? */}
+            كيف تعود الشراكة مع نسبة بالفائدة على مؤسستنا؟
+          </dt>
+          <dd className="mt-4 text-sm/6 text-gray-600">
+            {/* Partnering with Nesbah allows your institution to access new market segments, leverage cutting-edge fintech solutions, and improve service offerings through strategic collaborations and insights. */}
+            تسمح لكم الشراكة مع نسبة بالوصول إلى شرائح سوقية جديدة، والاستفادة من حلول التكنولوجيا المالية الحديثة، وتحسين العروض الخدمية من خلال التعاونات الاستراتيجية والرؤى.
+          </dd>
+        </dl>
+        <dl>
+          <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {/* Is Nesbah's platform compatible with existing banking systems? */}
+            هل منصة نسبة متوافقة مع الأنظمة المصرفية القائمة؟
+          </dt>
+          <dd className="mt-4 text-sm/6 text-gray-600">
+            {/* Yes, our platform is designed to integrate seamlessly with existing banking systems, ensuring a smooth transition and continuity in your operations. */}
+            نعم، منصتنا مصممة للاندماج بسلاسة مع الأنظمة المصرفية القائمة، مما يضمن انتقالاً سلساً واستمرارية في عملياتكم.
+          </dd>
+        </dl>
+        <dl>
+          <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {/* What kind of support can we expect from Nesbah? */}
+            ما نوع الدعم الذي يمكننا توقعه من نسبة؟
+          </dt>
+          <dd className="mt-4 text-sm/6 text-gray-600">
+            {/* We offer comprehensive support to our partners, including technical integration assistance, strategic planning advice, and ongoing operational support. */}
+            نقدم دعماً شاملاً لشركائنا، بما في ذلك المساعدة في التكامل التقني والنصح في التخطيط الاستراتيجي والدعم التشغيلي المستمر.
+          </dd>
+        </dl>
+        <dl>
+          <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {/* How does Nesbah ensure the confidentiality and security of data? */}
+            كيف تضمن نسبة سرية وأمان البيانات؟
+          </dt>
+          <dd className="mt-4 text-sm/6 text-gray-600">
+            {/* We adhere to stringent data security protocols and ensure all partner and customer information is handled with the utmost confidentiality and in compliance with relevant regulations. */}
+            نلتزم ببروتوكولات أمان البيانات الصارمة ونضمن التعامل مع معلومات الشركاء والعملاء بأقصى درجات السرية والتوافق مع اللوائح المعمول بها.
+          </dd>
+        </dl>
+        <dl>
+          <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {/* Can we customize the services offered through Nesbah? */}
+            هل يمكننا تخصيص الخدمات المقدمة من خلال نسبة؟
+          </dt>
+          <dd className="mt-4 text-sm/6 text-gray-600">
+            {/* Absolutely. We work closely with our partners to tailor our services to your specific needs and objectives. */}
+            بالتأكيد. نعمل عن كثب مع شركائنا لتخصيص خدماتنا لتلائم احتياجاتكم وأهدافكم الخاصة.
+          </dd>
+        </dl>
+        <dl>
+          <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {/* What is the process to become a partner with Nesbah? */}
+            ما هي عملية أن تصبح شريكًا مع نسبة؟
+          </dt>
+          <dd className="mt-4 text-sm/6 text-gray-600">
+            {/* To become a partner, simply email and tell us about yourself. Our team will then reach out to discuss potential synergies and the next steps. */}
+            لتصبحوا شركاء لنسبة، ما عليكم سوى إرسال بريدًا إلكترونيًا وإخبارنا عن أنفسكم. سيتواصل فريقنا بعد ذلك لمناقشة الفرص المحتملة والخطوات التالية.
+          </dd>
+        </dl>
+        <dl>
+          <dt className="text-sm font-semibold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {/* Are there any fees associated with partnering with Nesbah? */}
+            هل هناك أي رسوم مرتبطة بالشراكة مع نسبة؟
+          </dt>
+          <dd className="mt-4 text-sm/6 text-gray-600">
+            {/* The fee structure can vary based on the services and level of customization required. We recommend discussing this in detail during our initial consultations. */}
+            يمكن أن تختلف هيكلة الرسوم بناءً على الخدمات ومستوى التخصيص المطلوب. نوصي بمناقشة هذا بتفصيل خلال استشاراتنا الأولية.
+          </dd>
+        </dl>
+      </div>
       </section>
     </Container>
   )

@@ -26,14 +26,22 @@ export default function Register() {
                         </div>*/}
 
                         <Link href="/login" className="font-medium hover:text-gray-600">
-                            Back to home
+                            {/* Back to home */}
+                            العودة إلى الصفحة الرئيسية
                         </Link>
-                        <h1 className="mt-8 text-base/6 font-medium">Welcome to Nesbah</h1>
+                        <h1 className="mt-8 text-base/6 font-medium">
+                        {/* Welcome to Nesbah */}
+                        مرحبًا بك في نسبة
+                        </h1>
                         <p className="mt-1 text-sm/5 text-gray-600">
-                            Expand your business with us starting from today
+                            {/* Expand your business with us starting from today */}
+                            وسع أعمالك معنا بدءًا من اليوم
                         </p>
                         <Field className="mt-8 space-y-3">
-                            <Label className="text-sm/5 font-medium">Company name</Label>
+                            <Label className="text-sm/5 font-medium">
+                            {/* Company name */}
+                            اسم الشركة
+                            </Label>
                             <Input
                                 required
                                 autoFocus
@@ -48,7 +56,10 @@ export default function Register() {
                         </Field>
 
                         <Field className="mt-8 space-y-3">
-                            <Label className="text-sm/5 font-medium">Username</Label>
+                            <Label className="text-sm/5 font-medium">
+                            {/* Username */}
+                            اسم المستخدم
+                            </Label>
                             <Input
                                 required
                                 autoFocus
@@ -63,7 +74,10 @@ export default function Register() {
                         </Field>
 
                         <Field className="mt-8 space-y-3">
-                            <Label className="text-sm/5 font-medium">Email</Label>
+                            <Label className="text-sm/5 font-medium">
+                            {/* Email */}
+                            البريد الإلكتروني
+                            </Label>
                             <Input
                                 required
                                 autoFocus
@@ -78,7 +92,10 @@ export default function Register() {
                         </Field>
 
                         <Field className="mt-8 space-y-3 relative">
-                            <Label className="text-sm/5 font-medium">Password</Label>
+                            <Label className="text-sm/5 font-medium">
+                            {/* Password */}
+                            كلمة المرور
+                            </Label>
                             <div className="relative"> {/* Make this container relative */}
                                 <Input
                                     required
@@ -95,14 +112,18 @@ export default function Register() {
                                     onClick={() => setShowPassword(!showPassword)}
                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700 focus:outline-none"
                                 >
-                                    {showPassword ? 'Hide' : 'Show'}
+                                    {/* {showPassword ? 'Hide' : 'Show'} */}
+                                    {showPassword ? 'إخفاء' : 'إظهار'}
                                 </button>
                             </div>
                         </Field>
 
 
                         <Field className="mt-8 space-y-3 relative">
-                            <Label className="text-sm/5 font-medium">Confirm password</Label>
+                            <Label className="text-sm/5 font-medium">
+                            {/* Confirm password */}
+                            تأكيد كلمة المرور
+                            </Label>
                             <div className="relative"> {/* Make this container relative */}
                                 <Input
                                     required
@@ -119,7 +140,8 @@ export default function Register() {
                                     onClick={() => setShowPassword(!showPassword)}
                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700 focus:outline-none"
                                 >
-                                    {showPassword ? 'Hide' : 'Show'}
+                                    {/* {showPassword ? 'Hide' : 'Show'} */}
+                                    {showPassword ? 'إخفاء' : 'إظهار'}
                                 </button>
                             </div>
                         </Field>
@@ -136,20 +158,27 @@ export default function Register() {
                                 >
                                     <CheckIcon className="fill-white opacity-0 group-data-[checked]:opacity-100" />
                                 </Checkbox>
-                                <Label>I Agree to Nesbah's Term and Conditions of Service and Privacy Policy</Label>
+                                <Label>
+                                    {/* I Agree to Nesbah's Term and Conditions of Service and Privacy Policy */}
+                                    أوافق على شروط وأحكام الخدمة وسياسة الخصوصية لنسبة
+                                </Label>
                             </Field>
 
                         </div>
                         <div className="mt-8">
                             <Button type="submit" className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full px-6 py-3 transition ease-in-out duration-200 hover:bg-opacity-50 hover:shadow-lg hover:shadow-pink-500/50">
-                            Register
+                            {/* Register */}
+                            تسجيل
                             </Button>
                         </div>
                     </form>
                     <div className="m-1.5 rounded-lg bg-gray-50 py-4 text-center text-sm/5 ring-1 ring-black/5">
-                        Already have an account?{' '}
+                        {/* Already have an account? */}
+                        هل لديك حساب بالفعل؟
+                        {' '}
                         <Link href="/login" className="font-medium hover:text-gray-600">
-                            Sign in
+                            {/* Sign in */}
+                            تسجيل الدخول
                         </Link>
                     </div>
                 </div>

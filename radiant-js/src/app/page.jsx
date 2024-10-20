@@ -39,14 +39,19 @@ function Hero() {
         />
           <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
               <h1 className="font-display text-balance text-xl/[0.9] font-normal tracking-tight text-white sm:text-4xl/[0.8] md:text-9xl/[0.8]">
-                  Does your company need a business loan?
+                {/* Does your company need a business loan? */}
+                عندك شركة ومحتاج تمويل؟
               </h1>
               <p className="mt-8 max-w-5xl text-xl/7 font-normal text-white sm:text-2xl/8">
-                  With Nesbah, we save your time and effort in finding the perfect financial solutions and quickly connect you with the best service providers for your company.
+                  {/* With Nesbah, we save your time and effort in finding the perfect financial solutions and quickly connect you with the best service providers for your company. */}
+                  مع نسبة ، نوفر وقتك وجهدك في العثور على حلول مالية مثالية ، ونربطك بسرعة بأفضل مزودي الخدمات لشركتك.
               </p>
 
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/register">Get started</Button>
+            <Button href="/register">
+            {/* Get started */}
+            ابدأ الآن
+            </Button>
 
           </div>
         </div>
@@ -61,10 +66,12 @@ function BentoSection() {
     return (
         <Container className="mx-auto px-8 sm:px-12 lg:px-20">
             <Heading as="h3" className="mt-2 max-w-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                Why should you choose Nesbah?
+                {/* Why should you choose Nesbah? */}
+                لماذا يجب عليك اختيار نسبة؟
             </Heading>
             <p className="mt-8 max-w-full text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-                We leverage our extensive network in the financial industry to streamline your business needs and save you time.
+                {/* We leverage our extensive network in the financial industry to streamline your business needs and save you time. */}
+                نستفيد من شبكتنا الواسعة في الصناعة المالية لتبسيط عملية التسجيل وطلب الخدمات المالية وتوفير الوقت. قم بالتسجيل لمعرفة المزيد حول كيف يمكننا مساعدتك في زيادة مزايا منشأتك وتعزيز التجربة المالية لموظفيك
             </p>
             <div className="mt-2 grid grid-cols-1 sm:mt-16 lg:grid-cols-1 lg:grid-rows-2 gap-y-4">
 

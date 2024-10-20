@@ -10,3 +10,7 @@
     transform: translateX(var(--move-x-to));
   }
 }*/
+
+html {
+  direction: rtl;
+}
