@@ -141,7 +141,7 @@ export default function Register() {
 
                         </div>
                         <div className="mt-8">
-                            <Button type="submit" className="w-full  bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full px-6 py-3 transition ease-in-out duration-200 hover:bg-opacity-50 hover:shadow-lg hover:shadow-pink-500">
+                            <Button type="submit" className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full px-6 py-3 transition ease-in-out duration-200 hover:bg-opacity-50 hover:shadow-lg hover:shadow-pink-500/50">
                             Register
                             </Button>
                         </div>

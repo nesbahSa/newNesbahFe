@@ -1,19 +1,14 @@
 import { clsx } from 'clsx'
 
 export function LogoCloud({ className }) {
-  return (
-      <div
-          className={clsx(
-              className,
-              'flex justify-between max-sm:mx-auto max-sm:max-w-md max-sm:flex-wrap max-sm:justify-evenly max-sm:gap-x-4 max-sm:gap-y-4',
-          )}
-      >
-        <img
-            alt="Nesbah Logo"
-            src="../../images/logos/nesbahLogo.svg" // Updated path
-            className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-        />
-        {/* Repeat the same Nesbah logo if you want, or remove the extra logos */}
-      </div>
-  )
+    return (
+        <div className={`mt-12 ${className}`}>
+            <div className="grid grid-cols-2 gap-8 sm:flex sm:justify-center sm:space-x-36">
+                <img src="/partner-logo/emirates.png" alt="Logo 1" className="h-14 w-auto mx-auto sm:mx-0" />
+                <img src="/partner-logo/FAB.jpeg" alt="Logo 2" className="h-20 w-auto mx-auto sm:mx-0" />
+                <img src="/partner-logo/geidea.jpg" alt="Logo 3" className="h-16 w-auto mx-auto sm:mx-0" />
+                <img src="/partner-logo/LazyWait.png" alt="Logo 4" className="h-10 w-auto mx-auto sm:mx-0" />
+            </div>
+        </div>
+    );
 }

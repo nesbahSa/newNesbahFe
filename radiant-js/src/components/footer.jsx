@@ -53,7 +53,7 @@ function Sitemap() {
         <SitemapHeading>For business owner</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/login">Register</SitemapLink>
-          <SitemapLink href="/consultancy">Consultancy</SitemapLink>
+{/*          <SitemapLink href="/consultancy">Consultancy</SitemapLink>*/}
           <SitemapLink href="/FAQ">FAQ</SitemapLink>
         </SitemapLinks>
       </div>
@@ -66,11 +66,11 @@ function Sitemap() {
         </div>
       <div>
         <SitemapHeading>Reach us</SitemapHeading>
-          <p> admin@nesbah.net</p>
+          <p className="mt-6"> admin@nesbah.net</p>
       </div>
         <div>
             <SitemapHeading>Location</SitemapHeading>
-            <p> Riyadh, Saudi Arabia</p>
+            <p className="mt-6"> Riyadh, Saudi Arabia</p>
         </div>
     </>
   )
@@ -107,16 +107,9 @@ function SocialIconLinkedIn(props) {
 function SocialLinks() {
   return (
     <>
+
       <Link
-        href="https://facebook.com"
-        target="_blank"
-        aria-label="Visit us on Facebook"
-        className="text-gray-950 data-[hover]:text-gray-950/75"
-      >
-        <SocialIconFacebook className="size-4" />
-      </Link>
-      <Link
-        href="https://x.com"
+        href="https://x.com/NesbahSA?t=oEpXel6Qda5YZfrLKn5VaQ&s=09"
         target="_blank"
         aria-label="Visit us on X"
         className="text-gray-950 data-[hover]:text-gray-950/75"
@@ -124,7 +117,7 @@ function SocialLinks() {
         <SocialIconX className="size-4" />
       </Link>
       <Link
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/company/nesbah/"
         target="_blank"
         aria-label="Visit us on LinkedIn"
         className="text-gray-950 data-[hover]:text-gray-950/75"

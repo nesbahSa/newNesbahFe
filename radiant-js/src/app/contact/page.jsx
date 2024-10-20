@@ -1,5 +1,4 @@
-
-"use client";
+'use client';
 import { useId } from 'react'
 import Link from 'next/link'
 import { Navbar } from '@/components/navbar'
@@ -12,9 +11,58 @@ import { SocialMedia } from '@/components/SocialMedia'
 import { Footer } from '@/components/footer'
 import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
-import FormSentModal from '@/components/FormSentModal';
 import { Gradient, GradientBackground } from '@/components/gradient'
+import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
+import { CheckIcon, XCircleIcon } from '@heroicons/react/24/outline'
 
+function FormSentModal({ isOpen, onClose, isSuccess }) {
+    return (
+        <Dialog open={isOpen} onClose={onClose} className="relative z-10">
+            <DialogBackdrop className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+
+            <div className="fixed inset-0 z-10 overflow-y-auto">
+                <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                        <div>
+                            <div
+                                className={`mx-auto flex h-12 w-12 items-center justify-center rounded-full ${
+                                    isSuccess ? 'bg-green-100' : 'bg-red-100'
+                                }`}
+                            >
+                                {isSuccess ? (
+                                    <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
+                                ) : (
+                                    <XCircleIcon className="h-6 w-6 text-red-600" aria-hidden="true" />
+                                )}
+                            </div>
+                            <div className="mt-3 text-center sm:mt-5">
+                                <DialogTitle as="h3" className="text-base font-semibold leading-6 text-gray-900">
+                                    {isSuccess ? 'Your request has been sent' : 'Submission Failed'}
+                                </DialogTitle>
+                                <div className="mt-2">
+                                    <p className="text-sm text-gray-500">
+                                        {isSuccess
+                                            ? 'We will get back to you as soon as possible. Thank you for your interest.'
+                                            : 'There was an error processing your request. Please try again later.'}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mt-5 sm:mt-6">
+                            <button
+                                type="button"
+                                onClick={onClose}
+                                className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            >
+                                OK
+                            </button>
+                        </div>
+                    </DialogPanel>
+                </div>
+            </div>
+        </Dialog>
+    );
+}
 
 function TextInput({ label, ...props }) {
     let id = useId()
@@ -35,7 +83,7 @@ function TextInput({ label, ...props }) {
                 {label}
             </label>
         </div>
-    )
+    );
 }
 
 function TextArea({ label, ...props }) {
@@ -57,16 +105,14 @@ function TextArea({ label, ...props }) {
                 {label}
             </label>
         </div>
-    )
+    );
 }
-
 
 function ContactForm() {
     const form = useRef();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(true); // State to track success or failure
+    const [isSuccess, setIsSuccess] = useState(true);
 
-    // Form validation to ensure mandatory fields are filled
     const validateForm = () => {
         const formData = new FormData(form.current);
         const name = formData.get('name');
@@ -74,7 +120,6 @@ function ContactForm() {
         const company = formData.get('company');
         const phone = formData.get('phone');
 
-        // Check if any required field is missing
         if (!name || !email || !company || !phone) {
             setIsSuccess(false); // Failure state
             setIsModalOpen(true); // Show failure modal
@@ -86,21 +131,19 @@ function ContactForm() {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        // Validate the form before sending
         if (!validateForm()) {
-            return; // Stop if validation fails
+            return;
         }
 
-        // If validation passes, proceed with sending the email
         emailjs.sendForm('service_a20mtko', 'template_ii88j44', form.current, 'gb46bKjwD1H8tuLGR')
             .then((result) => {
                 console.log('Email sent successfully:', result.text);
-                setIsSuccess(true); // Set success state
-                setIsModalOpen(true); // Show the modal on success
+                setIsSuccess(true);
+                setIsModalOpen(true);
             }, (error) => {
                 console.log('Error sending email:', error.text);
-                setIsSuccess(false); // Set failure state
-                setIsModalOpen(true); // Show the modal on failure
+                setIsSuccess(false);
+                setIsModalOpen(true);
             });
 
         e.target.reset();
@@ -142,84 +185,73 @@ function ContactForm() {
                 </Button>
             </form>
 
-            {/* Modal for form submission success or failure */}
-            {isModalOpen && <FormSentModal onClose={closeModal} isSuccess={isSuccess} />}
+            {isModalOpen && <FormSentModal isOpen={isModalOpen} onClose={closeModal} isSuccess={isSuccess} />}
         </FadeIn>
     );
 }
 
 function ContactDetails() {
-  return (
-    <FadeIn>
+    return (
+        <FadeIn>
 
-      <h2 className="font-display text-base font-bold text-neutral-950">
-          Who can partner?
-      </h2>
-      <p className="mt-6 text-base  text-neutral-1200">
-          We invite financial institutions, banks, and financial companies to partner with us. Together, we can expand your reach, innovate your services, and drive mutual growth.
-      </p>
+            <h2 className="font-display text-base font-bold text-neutral-950">
+                Who can partner?
+            </h2>
+            <p className="mt-6 text-base  text-neutral-1200">
+                We invite financial institutions, banks, and financial companies to partner with us. Together, we can expand your reach, innovate your services, and drive mutual growth.
+            </p>
 
-      {/*<Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />*/}
-
-      <Border className="mt-16 pt-16">
-
-        <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
-          {[
-            ['Email', 'admin@nesbah.com.sa'],
-            ['Address', 'Riyadh, Saudi Arabia'],
-          ].map(([label, email]) => (
-            <div key={email}>
-              <dt className="font-semibold text-neutral-950">{label}</dt>
-              <dd>
-                <Link
-                  href={`mailto:${email}`}
-                  className="text-neutral-600 hover:text-neutral-950"
-                >
-                  {email}
-                </Link>
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </Border>
-
-      <Border className="mt-16 pt-16">
-        <h2 className="font-display text-base font-semibold text-neutral-950">
+            <Border className="mt-16 pt-16">
+                <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
+                    {[
+                        ['Email', 'admin@nesbah.com.sa'],
+                        ['Address', 'Riyadh, Saudi Arabia'],
+                    ].map(([label, email]) => (
+                        <div key={email}>
+                            <dt className="font-semibold text-neutral-950">{label}</dt>
+                            <dd>
+                                <Link
+                                    href={`mailto:${email}`}
+                                    className="text-neutral-600 hover:text-neutral-950"
+                                >
+                                    {email}
+                                </Link>
+                            </dd>
+                        </div>
+                    ))}
+                </dl>
+            </Border>
+            <Border className="mt-16 pt-16">
+                {/*<h2 className="font-display text-base font-semibold text-neutral-950">
           Follow us
         </h2>
-        <SocialMedia className="mt-6" />
-      </Border>
-    </FadeIn>
-  )
+          <SocialMedia className="mt-6 mb-8 sm:mb-0" />*/}
+            </Border>
+        </FadeIn>
+    );
 }
 
-
 export default function Contact() {
-  return (
-    <>
+    return (
+        <>
+            <main className="overflow-hidden">
+                <GradientBackground className="opacity-90" />
+                <Container>
+                    <Navbar />
+                </Container>
+                <PageIntro className= "py-0.10" eyebrow="Contact us" title={<span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Partner with Nesbah</span>}>
+                    <p>Our mission is to bridge the gap between financial service providers and the market's evolving needs. Join us as we collaborate to shape the future of banking and finance.</p>
+                </PageIntro>
 
-        <main className="overflow-hidden">
-            <GradientBackground className="opacity-70" />
-            <Container>
-                <Navbar />
-            </Container>
+                <Container className="mt-12 sm:mt-20 lg:mt-28">
+                    <div className="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-2">
+                        <ContactForm />
+                        <ContactDetails />
+                    </div>
+                </Container>
 
-            <PageIntro  eyebrow="Contact us" title={<span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">Partner with Nesbah</span>}>
-                <p>Our mission is to bridge the gap between financial service providers and the market's evolving needs. Join us as we collaborate to shape the future of banking and finance.</p>
-            </PageIntro>
-
-
-            <Container className="mt-24 sm:mt-32 lg:mt-40">
-
-                <div className="grid grid-cols-1 gap-x-8 gap-y-24 lg:grid-cols-2">
-                    <ContactForm />
-                    <ContactDetails />
-                </div>
-            </Container>
-
-            <Footer />
-        </main>
-
-    </>
-  )
+                <Footer />
+            </main>
+        </>
+    );
 }

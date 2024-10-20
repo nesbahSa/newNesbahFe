@@ -20,7 +20,7 @@ export default function Login() {
       <GradientBackground />
       <div className="isolate flex min-h-dvh items-center justify-center p-6 lg:p-8">
         <div className="w-full max-w-md rounded-xl bg-white shadow-md ring-1 ring-black/5">
-          <form action="#" method="POST" className="p-7 sm:p-11">Logo
+          <form action="#" method="POST" className="p-7 sm:p-11">
             <div className="flex items-start">
               <Link href="/" title="Home">
                 <Mark className="h-9 fill-black" />
@@ -86,7 +86,7 @@ export default function Login() {
               </Link>
             </div>
             <div className="mt-8">
-              <Button type="submit" className="w-full  bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full px-6 py-3 transition ease-in-out duration-200 hover:bg-opacity-50 hover:shadow-lg hover:shadow-pink-500">
+              <Button type="submit" className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-full px-6 py-3 transition ease-in-out duration-200 hover:bg-opacity-50 hover:shadow-lg hover:shadow-pink-500/50">
               Sign in
               </Button>
             </div>

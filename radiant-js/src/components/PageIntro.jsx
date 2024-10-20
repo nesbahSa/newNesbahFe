@@ -6,7 +6,7 @@ import { FadeIn } from '@/components/FadeIn'
 export function PageIntro({ eyebrow, title, children, centered = false }) {
   return (
     <Container
-      className={clsx('mt-24 sm:mt-32 lg:mt-40', centered && 'text-center')}
+      className={clsx('mt-10 sm:mt-14 lg:mt-18', centered && 'text-center')}
     >
       <FadeIn>
         <h1>

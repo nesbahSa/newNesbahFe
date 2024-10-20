@@ -27,7 +27,7 @@ function Hero() {
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
       <Container className="relative">
         <Navbar
-          banner={
+          /*banner={
             <Link
               href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
               className="flex items-center gap-1 rounded-full bg-fuchsia-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-[hover]:bg-fuchsia-950/30"
@@ -35,10 +35,10 @@ function Hero() {
               Nesbah jargon here
               <ChevronRightIcon className="size-4" />
             </Link>
-          }
+          }*/
         />
           <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-              <h1 className="font-display text-balance text-xl/[0.9] font-normal tracking-tight text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
+              <h1 className="font-display text-balance text-xl/[0.9] font-normal tracking-tight text-white sm:text-4xl/[0.8] md:text-9xl/[0.8]">
                   Does your company need a business loan?
               </h1>
               <p className="mt-8 max-w-5xl text-xl/7 font-normal text-white sm:text-2xl/8">
@@ -46,10 +46,8 @@ function Hero() {
               </p>
 
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="#">Get started</Button>
-            {/*<Button variant="secondary" href="/pricing">
-              See pricing
-            </Button>*/}
+            <Button href="/register">Get started</Button>
+
           </div>
         </div>
       </Container>
@@ -61,31 +59,33 @@ function Hero() {
 
 function BentoSection() {
     return (
-        <Container>
-
-            <Heading as="h3" className="mt-2 max-w-3xl">
+        <Container className="mx-auto px-8 sm:px-12 lg:px-20">
+            <Heading as="h3" className="mt-2 max-w-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 Why should you choose Nesbah?
             </Heading>
             <p className="mt-8 max-w-full text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
                 We leverage our extensive network in the financial industry to streamline your business needs and save you time.
             </p>
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-1 lg:grid-rows-2">
+            <div className="mt-2 grid grid-cols-1 sm:mt-16 lg:grid-cols-1 lg:grid-rows-2 gap-y-4">
 
-                <div className="relative h-[700px] w-full max-w-8xl rounded-4xl overflow-hidden">
-                    <img src="/screenshots/nesbahComparison1.jpeg" alt="Comparison 1" className="w-full h-auto object-fill rounded-xl" />
+                <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
+                    <img src="/screenshots/nesbahComparison1.jpeg" alt="Comparison 1" className="w-full h-full object-cover rounded-xl" />
                 </div>
-                <div className="relative h-[700px] w-full max-w-8xl rounded-4xl overflow-hidden">
-                    <img src="/screenshots/nesbahComparison2.jpeg" alt="Comparison 2" className="w-full h-auto object-fill rounded-xl" />
+
+                <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
+                    <img src="/screenshots/nesbahComparison2.jpeg" alt="Comparison 2" className="w-full h-full object-cover rounded-xl" />
                 </div>
 
             </div>
         </Container>
-    )
+    );
 }
 
+
+/*
 function DarkBentoSection() {
   return (
-    <div className="mx-2 mt-2 mb-10 rounded-4xl bg-gray-900 py-32">
+    <div className="mx-2 mt-1 mb-10 rounded-4xl bg-gray-900 py-32">
       <Container>
         <Subheading dark>Outreach</Subheading>
         <Heading as="h1" dark className="mt-8 max-w-full text-xl">
@@ -137,6 +137,7 @@ function DarkBentoSection() {
   )
 
 }
+*/
 
 export default function Home() {
   return (
@@ -149,13 +150,10 @@ export default function Home() {
         <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-32">
           <BentoSection />
         </div>
-        <DarkBentoSection />
+        {/*<DarkBentoSection />*/}
 
       </main>
-      <br/>
-        <br/>
-        <br/>
-        <br/>
+
       <Footer />
     </div>
   )

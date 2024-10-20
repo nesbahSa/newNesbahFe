@@ -14,7 +14,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
 
-  { href: '/studio/page.jsx', label: 'Home' },
+  { href: '/', label: 'Home' },
   /*{ href: '/consultancy', label: 'Consultancy' },*/
   /*{ href: '/retail', label: 'Retail' },*/
   { href: '/contact', label: 'Partner with Nesbah' },
@@ -30,7 +30,7 @@ function DesktopNav() {
         <PlusGridItem key={href} className="relative flex">
           <Link
             href={href}
-            className="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-[hover]:bg-gray-950/[2.5%]"
+            className="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-[hover]:bg-gray-950/[2.5%] border-none outline-none"
           >
             {label}
           </Link>
