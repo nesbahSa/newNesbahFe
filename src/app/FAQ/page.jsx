@@ -15,9 +15,9 @@ import {
 } from '@heroicons/react/16/solid'
 
 export const metadata = {
-  title: 'Pricing',
+  title: 'FAQ',
   description:
-    'Companies all over the world have closed millions of deals with Radiant. Sign up today and start selling smarter.',
+    'هل لديك سؤال؟',
 }
 
 
@@ -149,13 +149,14 @@ function PlusIcon(props) {
 
 function Testimonial() {
   return (
-    <div className="mx-2 my-24 rounded-4xl bg-gray-900 bg-[url(/dot-texture.svg)] pb-24 pt-72 lg:pt-36">
+
+    <div className="mx-2 my-24 rounded-4xl bg-gray-900 bg-[url(/dot-texture.svg)] pb-30 pt-72 lg:pt-36">
       <Container className="mt-15">
         <div className="grid grid-cols-1 lg:grid-cols-[384px_1fr_1fr]">
-          <div className="-mt-96 lg:-mt-52">
-            <div className="-m-2 rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 max-lg:mx-auto max-lg:max-w-xs">
-              <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+          <div className="-mt-96 lg:-mt-52 pt-10">
+            <div className="-m-2 rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 max-lg:mx-auto max-lg:max-w-xs ">
+              <div className="rounded-4xl p-2 shadow-md shadow-black/5 ">
+                <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10 ">
                   <img
                     alt=""
                     src="/characters/handshake.jpg"
@@ -178,7 +179,7 @@ function Testimonial() {
                 {/* Yousef Aljameely */}
                 يوسف الجميلي
                 </p>
-                <p className="text-sm/6 font-medium">
+                <p className="text-sm/6 font-medium pb-10">
                   <span className="bg-gradient-to-r from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff] bg-clip-text text-transparent">
                     {/* Founder */}
                     المؤسس

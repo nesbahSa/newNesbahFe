@@ -62,8 +62,8 @@ function MobileNavButton() {
 
 function MobileNav() {
   return (
-    <DisclosurePanel className="lg:hidden bg-white/30 rounded-xl px-3">
-      <div className="flex flex-col gap-6 py-4">
+    <DisclosurePanel className="lg:hidden bg-white/20 rounded-xl px-3">
+      <div className="flex flex-col gap-6 py-5">
         {links.map(({ href, label }, linkIndex) => (
           <motion.div
             initial={{ opacity: 0, rotateX: -90 }}

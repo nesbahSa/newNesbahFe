@@ -10,8 +10,8 @@ export function LogoCloud({ className }) {
         //         <img src="/partner-logo/LazyWait.png" alt="Logo 4" className="h-10 w-auto mx-auto sm:mx-0 object-contai" />
         //     </div>
         // </div>
-        
-        <div className="bg-white py-24 sm:py-32">
+
+        <div className="bg-white py-6 sm:py-8">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
                 <img
