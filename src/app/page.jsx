@@ -60,12 +60,10 @@ function Hero() {
           }*/
         />
           <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-              <h1 className="font-display text-2xl font-semibold text-balance tracking-tight text-white sm:text-4xl/[0.8] md:text-9xl/[0.8]">
+              <h1 className="font-display text-xl font-semibold text-balance tracking-tight text-white sm:text-4xl/[0.8] sm:leading-loose md:text-8xl/[0.8] md:leading-relaxed">
                 {/* Does your company need a business loan? */}
                   هل شركتك تحتاج الى
                   <br></br>
-
-
                   <span className="pt-30">{changingText[currentText]}</span>
               </h1>
               <p className="mt-8 max-w-5xl text-xl/7 font-normal text-white sm:text-2xl/8">
@@ -91,17 +89,17 @@ function Hero() {
 function BentoSection() {
     return (
         <Container className="mx-auto px-4 sm:px-8 lg:px-16">
-            <Heading as="h3" className="mt-1 max-w-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <Heading as="h3" className="mt-0.5 max-w-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent leading-[1.2] md:min-h-[80px]">
                 {/* Why should you choose Nesbah? */}
                 لماذا يجب عليك اختيار نسبة؟
             </Heading>
-            <p className="mt-8 max-w-full text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
+            <p className="mt-4 max-w-full text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
                 {/* We leverage our extensive network in the financial industry to streamline your business needs and save you time. */}
                 نستفيد من شبكتنا الواسعة في الصناعة المالية لتبسيط عملية التسجيل وطلب الخدمات المالية وتوفير الوقت. قم بالتسجيل لمعرفة المزيد حول كيف يمكننا مساعدتك في زيادة مزايا منشأتك وتعزيز التجربة المالية لموظفيك
             </p>
             <div className="mt-6 grid grid-cols-1 sm:mt-16 lg:grid-cols-1 lg:grid-rows-2 gap-y-4">
 
-                    <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
+                    <div className="relative h-auto w-full max-w-8xl rounded-xl overflow-hidden sm:h-[500px] lg:h-[700px]">
                         <img src="/screenshots/newNesbahComparison1.jpeg" alt="Comparison 1" className="w-full h-full object-cover rounded-xl" />
                     </div>
 
@@ -176,10 +174,10 @@ export default function Home() {
     <div className="overflow-hidden">
       <Hero />
       <main>
-        <Container className="mt-10">
+        <Container className="mt-2">
           <LogoCloud />
         </Container>
-        <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-32">
+        <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-12">
           <BentoSection />
         </div>
         {/*<DarkBentoSection />*/}

@@ -14,7 +14,7 @@ function CallToAction() {
           {/* Get started */}
           ابدأ الآن
           </Subheading>
-        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
+        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl sm:leading-relaxed md:leading-relaxed">
           {/* Ready to expand your business? */}
           هل أنت مستعد لتوسيع نطاق عملك؟
           <br />
