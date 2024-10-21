@@ -1,3 +1,5 @@
+'use client'
+
 import { BentoCard } from '@/components/bento-card'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
@@ -15,13 +17,33 @@ import { Screenshot } from '@/components/screenshot'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
+import React, { useState, useEffect } from 'react';
 
-export const metadata = {
+/*export const metadata = {
   description:
-    'Radiant helps you sell more by revealing sensitive information about your customers.',
-}
+      'Grow your business with us.',
+}*/
 
 function Hero() {
+
+    const [currentText, setCurrentText] = useState(0);
+
+    const changingText = [
+        " تاج تمويل؟",
+        " نظام نقاط البيع؟",
+        " بوابة الدفع؟",
+        " الفوترة السحابية؟",
+        " نظام الكاشير؟"
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentText((prevText) => (prevText + 1) % changingText.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [changingText.length]);
+
   return (
     <div className="relative">
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
@@ -38,9 +60,13 @@ function Hero() {
           }*/
         />
           <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-              <h1 className="font-display text-balance text-xl/[0.9] font-normal tracking-tight text-white sm:text-4xl/[0.8] md:text-9xl/[0.8]">
+              <h1 className="font-display text-3xl font-semibold text-balance tracking-tight text-white sm:text-4xl/[0.8] md:text-9xl/[0.8]">
                 {/* Does your company need a business loan? */}
-                عندك شركة ومحتاج تمويل؟
+                  هل شركتك تحتاج الى
+                  <br></br>
+
+
+                  <span className="pt-30">{changingText[currentText]}</span>
               </h1>
               <p className="mt-8 max-w-5xl text-xl/7 font-normal text-white sm:text-2xl/8">
                   {/* With Nesbah, we save your time and effort in finding the perfect financial solutions and quickly connect you with the best service providers for your company. */}
@@ -64,8 +90,8 @@ function Hero() {
 
 function BentoSection() {
     return (
-        <Container className="mx-auto px-8 sm:px-12 lg:px-20">
-            <Heading as="h3" className="mt-2 max-w-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        <Container className="mx-auto px-4 sm:px-8 lg:px-16">
+            <Heading as="h3" className="mt-1 max-w-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 {/* Why should you choose Nesbah? */}
                 لماذا يجب عليك اختيار نسبة؟
             </Heading>
@@ -73,16 +99,15 @@ function BentoSection() {
                 {/* We leverage our extensive network in the financial industry to streamline your business needs and save you time. */}
                 نستفيد من شبكتنا الواسعة في الصناعة المالية لتبسيط عملية التسجيل وطلب الخدمات المالية وتوفير الوقت. قم بالتسجيل لمعرفة المزيد حول كيف يمكننا مساعدتك في زيادة مزايا منشأتك وتعزيز التجربة المالية لموظفيك
             </p>
-            <div className="mt-2 grid grid-cols-1 sm:mt-16 lg:grid-cols-1 lg:grid-rows-2 gap-y-4">
+            <div className="mt-6 grid grid-cols-1 sm:mt-16 lg:grid-cols-1 lg:grid-rows-2 gap-y-4">
 
                 <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
-                    <img src="/screenshots/nesbahComparison1.jpeg" alt="Comparison 1" className="w-full h-full object-cover rounded-xl" />
+                    <img src="/screenshots/newNesbahComparison1.jpeg" alt="Comparison 1" className="w-full h-full object-cover rounded-xl" />
                 </div>
 
                 <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
-                    <img src="/screenshots/nesbahComparison2.jpeg" alt="Comparison 2" className="w-full h-full object-cover rounded-xl" />
+                    <img src="/screenshots/newNesbahComparison2.jpeg" alt="Comparison 2" className="w-full h-full object-cover rounded-xl" />
                 </div>
-
             </div>
         </Container>
     );
