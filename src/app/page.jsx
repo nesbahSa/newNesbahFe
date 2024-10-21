@@ -60,7 +60,7 @@ function Hero() {
           }*/
         />
           <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-              <h1 className="font-display text-3xl font-semibold text-balance tracking-tight text-white sm:text-4xl/[0.8] md:text-9xl/[0.8]">
+              <h1 className="font-display text-2xl font-semibold text-balance tracking-tight text-white sm:text-4xl/[0.8] md:text-9xl/[0.8]">
                 {/* Does your company need a business loan? */}
                   هل شركتك تحتاج الى
                   <br></br>
@@ -101,9 +101,9 @@ function BentoSection() {
             </p>
             <div className="mt-6 grid grid-cols-1 sm:mt-16 lg:grid-cols-1 lg:grid-rows-2 gap-y-4">
 
-                <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
-                    <img src="/screenshots/newNesbahComparison1.jpeg" alt="Comparison 1" className="w-full h-full object-cover rounded-xl" />
-                </div>
+                    <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
+                        <img src="/screenshots/newNesbahComparison1.jpeg" alt="Comparison 1" className="w-full h-full object-cover rounded-xl" />
+                    </div>
 
                 <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
                     <img src="/screenshots/newNesbahComparison2.jpeg" alt="Comparison 2" className="w-full h-full object-cover rounded-xl" />
