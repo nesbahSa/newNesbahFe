@@ -18,7 +18,7 @@ import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 export const metadata = {
   description:
-    'Radiant helps you sell more by revealing sensitive information about your customers.',
+    'Grow your business with us.',
 }
 
 function Hero() {
@@ -64,7 +64,7 @@ function Hero() {
 
 function BentoSection() {
     return (
-        <Container className="mx-auto px-8 sm:px-12 lg:px-20">
+        <Container className="mx-auto px-4 sm:px-8 lg:px-16">
             <Heading as="h3" className="mt-2 max-w-3xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 {/* Why should you choose Nesbah? */}
                 لماذا يجب عليك اختيار نسبة؟
@@ -82,7 +82,6 @@ function BentoSection() {
                 <div className="relative h-auto w-full max-w-8xl rounded-2xl overflow-hidden sm:h-[500px] lg:h-[700px]">
                     <img src="/screenshots/nesbahComparison2.jpeg" alt="Comparison 2" className="w-full h-full object-cover rounded-xl" />
                 </div>
-
             </div>
         </Container>
     );
