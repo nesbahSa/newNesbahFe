@@ -28,12 +28,12 @@ export default function FormStatusModal({ isOpen, onClose, isSuccess }) {
                             </div>
                             <div className="mt-3 text-center sm:mt-5">
                                 <DialogTitle as="h3" className="text-base font-semibold leading-6 text-gray-900">
-                                    {isSuccess ? 'Your request has been sent' : 'Submission Failed'}
+                                    {isSuccess ? 'تم إرسال طلبك.' : 'Submission Failed'}
                                 </DialogTitle>
                                 <div className="mt-2">
                                     <p className="text-sm text-gray-500">
                                         {isSuccess
-                                            ? 'We will get back to you as soon as possible. Thank you for your interest.'
+                                            ? 'سوف نتواصل معك في أقرب وقت ممكن. شكرًا لاهتمامك.'
                                             : 'There was an error processing your request. Please try again.'}
                                     </p>
                                 </div>
@@ -45,7 +45,7 @@ export default function FormStatusModal({ isOpen, onClose, isSuccess }) {
                                 onClick={onClose}
                                 className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                             >
-                                OK
+                                تمام
                             </button>
                         </div>
                     </DialogPanel>
