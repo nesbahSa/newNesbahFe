@@ -15,6 +15,7 @@ import { Screenshot } from '@/components/screenshot'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
+import '@/styles/tailwind.css'
 
 export const metadata = {
   description:
