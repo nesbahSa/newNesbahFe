@@ -38,7 +38,7 @@ function Hero() {
           }*/
         />
           <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-              <h1 className="font-display text-balance text-xl/[0.9] font-normal tracking-tight text-white sm:text-4xl/[0.8] md:text-9xl/[0.8]">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-9xl font-normal tracking-tight text-white">
                 {/* Does your company need a business loan? */}
                 عندك شركة ومحتاج تمويل؟
               </h1>
