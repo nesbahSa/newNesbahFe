@@ -11,6 +11,7 @@ import { clsx } from 'clsx'
 import {useState} from "react";
 
 
+
 export default function Register() {
 
     const [showPassword, setShowPassword] = useState(false);
@@ -25,7 +26,7 @@ export default function Register() {
 
                         </div>*/}
 
-                        <Link href="/login" className="font-medium hover:text-gray-600">
+                        <Link href="/" className="font-medium hover:text-gray-600">
                             {/* Back to home */}
                             العودة إلى الصفحة الرئيسية
                         </Link>
