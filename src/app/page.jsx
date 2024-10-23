@@ -60,7 +60,7 @@ function Hero() {
           }*/
         />
           <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-              <h1 className="font-display text-xl font-semibold text-balance tracking-tight text-white sm:text-4xl/[0.8] sm:leading-loose md:text-8xl/[0.8] md:leading-relaxed">
+              <h1 className="font-display text-3xl font-semibold leading-relaxed text-balance tracking-tight text-white sm:text-4xl/[0.8] sm:font-semi-bold sm:leading-loose md:text-6xl/[0.8] md:leading-relaxed">
                 {/* Does your company need a business loan? */}
                   هل شركتك تحتاج الى
                   <br></br>
