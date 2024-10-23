@@ -29,7 +29,7 @@ function Hero() {
     const [currentText, setCurrentText] = useState(0);
 
     const changingText = [
-        " تاج تمويل؟",
+        " تمويل؟",
         " نظام نقاط البيع؟",
         " بوابة الدفع؟",
         " الفوترة السحابية؟",
