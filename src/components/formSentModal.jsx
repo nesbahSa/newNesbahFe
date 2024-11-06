@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
-import { CheckIcon, XCircleIcon } from '@heroicons/react/24/outline' // Import failure icon
+import { CheckIcon, XCircleIcon } from '@heroicons/react/24/outline'
 
 export default function FormStatusModal({ isOpen, onClose, isSuccess }) {
     return (
@@ -23,7 +23,7 @@ export default function FormStatusModal({ isOpen, onClose, isSuccess }) {
                                 {isSuccess ? (
                                     <CheckIcon aria-hidden="true" className="h-6 w-6 text-green-600" />
                                 ) : (
-                                    <XCircleIcon aria-hidden="true" className="h-6 w-6 text-red-600" /> // Display failure icon
+                                    <XCircleIcon aria-hidden="true" className="h-6 w-6 text-red-600" />
                                 )}
                             </div>
                             <div className="mt-3 text-center sm:mt-5">

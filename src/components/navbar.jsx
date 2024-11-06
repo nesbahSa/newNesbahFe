@@ -26,7 +26,7 @@ const links = [
   // { href: '/FAQ', label: 'FAQ' },
   { href: '/FAQ', label: 'الأسئلة الشائعة' },
 
-  /*{ href: '/blog', label: 'Blog' },*/
+  { href: '/blog', label: 'Blog' },
 
   // { href: '/login', label: 'Login' },
   { href: '/login', label: 'تسجيل الدخول' },
