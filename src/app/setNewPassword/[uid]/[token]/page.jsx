@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { Button } from '@/components/button';
 import { GradientBackground } from '@/components/gradient';
 import { Link } from '@/components/link';
-import setNewPasswordModal from '@/components/forgotPasswordLinkModal';
+import SetNewPasswordModal from '@/components/SetNewPasswordModal';
 import { Checkbox, Field, Input, Label } from '@headlessui/react';
 import { CheckIcon } from '@heroicons/react/16/solid';
 import { clsx } from 'clsx';
@@ -24,8 +23,6 @@ export default function SetNewPassword() {
 
     const [uid, setUid] = useState('');
     const [token, setToken] = useState('');
-
-    const router = useRouter();
 
     useEffect(() => {
 
@@ -157,7 +154,7 @@ export default function SetNewPassword() {
 
                 </div>
             </div>
-            <setNewPasswordModal
+            <SetNewPasswordModal
                 isOpen={isOpen}
                 onClose={() => setIsModalOpen(false)}
                 isSuccess={isSuccess}
