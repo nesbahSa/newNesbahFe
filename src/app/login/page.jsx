@@ -19,7 +19,7 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    setIsModalOpen(false);
     const formData = new FormData();
     formData.append('username', username);
     formData.append('password', password);
@@ -61,13 +61,13 @@ export default function Login() {
               <h1 className="mt-8 text-base/6 font-medium">مرحبا بك</h1>
               <p className="mt-1 text-sm/5 text-gray-600">تسجيل الدخول للحساب للمتابعة</p>
               <Field className="mt-8 space-y-3">
-                <Label className="text-sm/5 font-medium">البريد الإلكتروني</Label>
+                <Label className="text-sm/5 font-medium">اسم المستخدم</Label>
                 <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     required
-                    placeholder="البريد الإلكتروني"
+                    placeholder="اسم المستخدم"
                     className="block w-full rounded-lg border shadow ring-1 ring-black/10 px-4 py-2"
                 />
               </Field>
