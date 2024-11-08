@@ -9,6 +9,7 @@ import { Checkbox, Field, Input, Label } from '@headlessui/react';
 import { CheckIcon } from '@heroicons/react/16/solid';
 import { clsx } from 'clsx';
 import { Mark } from '@/components/logo'
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -86,7 +87,11 @@ export default function Login() {
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700"
                   >
-                    {showPassword ? 'اخفاء' : 'اظهار'}
+                    {showPassword ? (
+                        <EyeSlashIcon className="h-5 w-5" aria-hidden="true" />
+                    ) : (
+                        <EyeIcon className="h-5 w-5" aria-hidden="true" />
+                    )}
                   </button>
                 </div>
               </Field>
@@ -105,7 +110,7 @@ export default function Login() {
                   </Checkbox>
                   <Label>تذكرني</Label>
                 </Field>
-                <Link href="#" className="font-medium hover:text-gray-600">
+                <Link href="/forgotPassword" className="font-medium hover:text-gray-600">
                   هل نسيت كلمة المرور؟
                 </Link>
               </div>

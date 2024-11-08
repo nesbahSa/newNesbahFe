@@ -8,8 +8,10 @@ import { CheckIcon } from '@heroicons/react/16/solid';
 import { clsx } from 'clsx';
 import { useState } from 'react';
 import RegistrationModal from '@/components/RegistrationModal';
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
 
 export default function Register() {
+
     const [showPassword, setShowPassword] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [username, setUsername] = useState('');
@@ -17,17 +19,26 @@ export default function Register() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [passwordError, setPasswordError] = useState('');
+
+    const [isOpen, setIsModalOpen] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
     const handleRegister = async (e) => {
         e.preventDefault();
+
+        if (password !== confirmPassword) {
+            setPasswordError('Passwords do not match. Please try again.');
+            return;
+        } else {
+            setPasswordError('');
+        }
+
         console.log("Form submitted");
 
-
         const formData = new FormData();
-        formData.append('username', username);
         formData.append('first_name', firstName);
+        formData.append('username', username);
         formData.append('email', email);
         formData.append('password1', password);
         formData.append('password2', confirmPassword);
@@ -38,19 +49,17 @@ export default function Register() {
                 body: formData,
             });
 
-            console.log('Response Status:', response.status);
-            console.log('Response Headers:', [...response.headers.entries()]);
-
             const data = await response.json();
             if (response.ok) {
                 setIsSuccess(true);
             } else {
                 setIsSuccess(false);
             }
-            setIsModalOpen(true);
+
         } catch (error) {
             console.error('Error during registration:', error);
             setIsSuccess(false);
+        } finally {
             setIsModalOpen(true);
         }
     };
@@ -94,7 +103,7 @@ export default function Register() {
                         <Field className="mt-8 space-y-3">
                             <Label className="text-sm/5 font-medium">البريد الإلكتروني</Label>
                             <input
-                                type="text"
+                                type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
@@ -112,14 +121,18 @@ export default function Register() {
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
                                     placeholder="كلمة المرور"
-                                    className="block w-full rounded-lg border shadow px-4 py-2 pr-12"
+                                    className="block w-full rounded-lg border shadow ring-1 ring-black/10 pr-12 px-4 py-2"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700"
                                 >
-                                    {showPassword ? 'إخفاء' : 'إظهار'}
+                                    {showPassword ? (
+                                        <EyeSlashIcon className="h-5 w-5" aria-hidden="true" />
+                                    ) : (
+                                        <EyeIcon className="h-5 w-5" aria-hidden="true" />
+                                    )}
                                 </button>
                             </div>
                         </Field>
@@ -140,9 +153,16 @@ export default function Register() {
                                     onClick={() => setShowPassword(!showPassword)}
                                     className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700"
                                 >
-                                    {showPassword ? 'إخفاء' : 'إظهار'}
+                                    {showPassword ? (
+                                        <EyeSlashIcon className="h-5 w-5" aria-hidden="true" />
+                                    ) : (
+                                        <EyeIcon className="h-5 w-5" aria-hidden="true" />
+                                    )}
                                 </button>
                             </div>
+                            {passwordError && (
+                                <p className="text-red-500 text-sm mt-2">{passwordError}</p>
+                            )}
                         </Field>
 
                         <div className="mt-8 flex items-center justify-between text-sm/5">
@@ -180,9 +200,10 @@ export default function Register() {
                 </div>
             </div>
 
-            {/* Render the RegistrationModal component */}
+
+
             <RegistrationModal
-                isOpen={isModalOpen}
+                isOpen={isOpen}
                 onClose={() => setIsModalOpen(false)}
                 isSuccess={isSuccess}
             />
