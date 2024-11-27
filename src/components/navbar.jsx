@@ -17,6 +17,8 @@ const links = [
   // { href: '/', label: 'Home' },
   { href: '/', label: 'الصفحة رئيسية' },
 
+  { href: '/calculator', label: 'calculator' },
+
   /*{ href: '/consultancy', label: 'Consultancy' },*/
   /*{ href: '/retail', label: 'Retail' },*/
 
