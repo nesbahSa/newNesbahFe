@@ -1,18 +1,10 @@
 'use client'
-import { Button } from '@/components/button'
+
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
 import { Gradient, GradientBackground } from '@/components/gradient'
-import { Link } from '@/components/link'
-import { LogoCloud } from '@/components/logo-cloud'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import {
-    CheckIcon,
-    ChevronUpDownIcon,
-    MinusIcon,
-} from '@heroicons/react/16/solid'
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 
