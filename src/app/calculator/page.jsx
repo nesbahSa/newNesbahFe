@@ -126,7 +126,7 @@ function CalculatorForm()  {
         setInterestRate('');
         setKnownLoanAmount('');
         setTenor('');
-        setIsNextStepDisabled(false)
+        setIsNextStepDisabled(true)
     };
 
     const handleManualCalculation = (event) => {
@@ -180,9 +180,9 @@ function CalculatorForm()  {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-white mt-10 pb-16">
-            <div className="mx-auto max-w-4xl px-8 py-10 bg-purple-50 shadow-md rounded-lg">
-                <form className="flex flex-col items-center space-y-8">
+        <div className="flex items-center justify-center min-h-screen bg-white mt-10 pb-16 px-4 sm:px-6 lg:px-8">
+            <div className="w-full max-w-md sm:max-w-lg lg:max-w-4xl px-4 py-6 sm:py-10 bg-purple-50 shadow-md rounded-lg">
+                <form className="space-y-6">
                     <div className="space-y-12 w-full">
                         <div className="pb-4 text-center">
                             <h2 className="text-base/7 font-semibold text-gray-900">
@@ -197,9 +197,9 @@ function CalculatorForm()  {
                             {/* Objective Fieldset */}
                             <fieldset className="mt-5">
                                 <legend className="text-sm/6 font-semibold text-gray-900">
-                                    What is your situation?
+                                    What is your situation
                                 </legend>
-                                <div className="mt-6 flex justify-center items-center">
+                                <div className="mt-6 flex justify-center items-center sm:grid-cols-2 gap-4">
                                     {objective.map((objective) => (
                                         <div key={objective.id} className="flex items-center">
                                             <input
@@ -225,7 +225,7 @@ function CalculatorForm()  {
                             {/* Loan Type Fieldset */}
                             <fieldset className="mt-10">
                                 <legend className="text-sm/6 font-semibold text-gray-900">
-                                    What type of loan?
+                                    What type of loan
                                 </legend>
                                 <div className="mt-6 flex justify-center items-center">
                                     {loanType.map((loan) => (
@@ -253,7 +253,7 @@ function CalculatorForm()  {
                             {/* Employment Status Fieldset */}
                             <fieldset className="mt-10">
                                 <legend className="text-sm/6 font-semibold text-gray-900">
-                                    What is your employment status?
+                                    What is your employment status
                                 </legend>
                                 <div className="mt-6 flex justify-center items-center">
                                     {employmentStatus.map((employmentStatus) => (
@@ -302,7 +302,7 @@ function CalculatorForm()  {
                     {/* Conditional Rendering for Step 2 */}
                     {manualForm && (
                         <>
-                            <h1 className="mt-5 font-semibold text-purple-800">STEP 2</h1>
+                            <h1 className="mt-5 font-semibold text-purple-800 text-center">STEP 2</h1>
 
                             {/* Monthly Salary Field */}
                             <fieldset className="mt-5">
@@ -383,7 +383,7 @@ function CalculatorForm()  {
 
                     {autoForm && (
                         <>
-                            <h1 className="mt-5 font-semibold text-purple-800">STEP 2</h1>
+                            <h1 className="mt-5 font-semibold text-purple-800 text-center">STEP 2</h1>
 
                             <fieldset className="mt-10">
                                 <label
@@ -405,7 +405,6 @@ function CalculatorForm()  {
                                             type="text"
                                             value={knownLoanAmount}
                                             onChange={(e) => setKnownLoanAmount(e.target.value)}
-                                            placeholder="SAR"
                                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
                                         />
                                     </div>
@@ -432,7 +431,6 @@ function CalculatorForm()  {
                                             name="salary"
                                             type="text"
                                             onChange={(e) => setSalary(e.target.value)}
-                                            placeholder="2000000"
                                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
                                         />
                                     </div>
@@ -459,7 +457,6 @@ function CalculatorForm()  {
                                             name="interestRate"
                                             type="text"
                                             onChange={(e) => setInterestRate(e.target.value)}
-                                            placeholder="3"
                                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
                                         />
                                     </div>
