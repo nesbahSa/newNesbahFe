@@ -69,6 +69,8 @@ function CalculatorForm()  {
     const [autoOtherTenorsResults, setAutoOtherTenorsResults] = useState([]);
     const [results, setResults] = useState([]);
     const [isNextStepDisabled, setIsNextStepDisabled] = useState(false);
+    const [isObjectiveDisabled, setIsObjectiveDisabled] = useState(false);
+
 
     const exportToExcel = () => {
         const worksheet = XLSX.utils.json_to_sheet(results); // Convert JSON data (results) to worksheet
@@ -117,6 +119,8 @@ function CalculatorForm()  {
         else {
             alert('Please fill all the required field.');
         }
+
+        setIsObjectiveDisabled(true);
     };
 
     const tenorOptions = selectedLoanType === 'house' ? homeTenor : personalTenor;
@@ -131,6 +135,12 @@ function CalculatorForm()  {
 
     const handleManualCalculation = (event) => {
         event.preventDefault();
+
+        if (!salary || !interestRate) {
+            alert("Please fill in all required field.");
+            return; // Stop further execution
+        }
+
         const inputData = {
             salary: parseFloat(salary),
             interestRate: parseFloat(interestRate),
@@ -177,6 +187,7 @@ function CalculatorForm()  {
         setShowManualForm(false);
         setShowAutoForm(false);
         setIsNextStepDisabled(false);
+        setIsObjectiveDisabled(false);
     };
 
     return (
@@ -210,6 +221,7 @@ function CalculatorForm()  {
                                                 className="size-4 border-gray-300 text-indigo-600 focus:ring-indigo-600 gap-2"
                                                 checked={selectedObjective === objective.id}
                                                 onChange={() => handleObjectiveChange(objective.id)}
+                                                disabled={isObjectiveDisabled} // Disable when next step is clicked
                                             />
                                             <label
                                                 htmlFor={objective.id}
@@ -352,7 +364,6 @@ function CalculatorForm()  {
                                             type="text"
                                             value={interestRate}
                                             onChange={(e) => setInterestRate(e.target.value)}
-                                            placeholder="3"
                                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:600 focus:ring-0 sm:text-sm/6"
                                         />
                                     </div>
