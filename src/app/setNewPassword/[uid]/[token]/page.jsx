@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/button';
 import { GradientBackground } from '@/components/gradient';
 import { Link } from '@/components/link';
-import SetNewPasswordModal from '@/components/SetNewPasswordModal';
+import SetNewPasswordModal from '@/components/setNewPasswordModal';
 import { Checkbox, Field, Input, Label } from '@headlessui/react';
 import { CheckIcon } from '@heroicons/react/16/solid';
 import { clsx } from 'clsx';
