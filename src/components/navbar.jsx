@@ -17,7 +17,7 @@ const links = [
   // { href: '/', label: 'Home' },
   { href: '/', label: 'الصفحة رئيسية' },
 
-  { href: '/calculator', label: 'calculator' },
+  { href: '/calculator', label: 'الحاسبة' },
 
   /*{ href: '/consultancy', label: 'Consultancy' },*/
   /*{ href: '/retail', label: 'Retail' },*/
