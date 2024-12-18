@@ -314,11 +314,11 @@ function CalculatorForm()  {
                                     سيتم عرض معلومات التمويل بشكل تقريبي
                                 </p>
                             </div>
-                            <div className="items-center px-4 py-5 sm:p-6">
+                            <div className="pr-4 items-center px-4 py-2 sm:p-6">
                                 {/* Objective Fieldset */}
                                 <fieldset>
                                     <div className="mt-6 grid sm:grid-cols-3 gap-4 px-4">
-                                        <legend className="text-sm font-semibold text-purple-950">طريقة الاحتساب؟</legend>
+                                        <legend className=" text-sm font-semibold text-purple-950">طريقة الاحتساب؟</legend>
                                         {objective.map((objective) => (
 
 
