@@ -5,15 +5,15 @@ import { Footer } from '@/components/footer'
 import { Gradient, GradientBackground } from '@/components/gradient'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
-import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { CheckIcon } from '@heroicons/react/24/solid'
+import React, { useState, useEffect } from 'react';
 
 
 
 const objective = [
-    {id: 'manual', title: 'اعرف مبلغ التمويل واريد رؤية افضل الخيارات'},
-    {id: 'auto', title: 'معرفة الحد الاقصى للتمويل'},
+    {id: 'manual', title: 'معرفة الحد الاقصى للتمو'},
+    {id: 'auto', title: 'اعرف مبلغ التمويل واريد رؤية افضل الخيارات'},
 ]
 
 const employmentStatus = [
@@ -50,8 +50,8 @@ function Header() {
     return (
         <div className="text-center">
             <Container className="mt-16">
-                <Heading className="text-purple-950" as="h1">أكتشف خيارك</Heading>
-                <h2 className="text-sm md:text-base mt-4 text-purple-950">
+                <Heading className="tracking-wide text-purple-950" as="h1">أكتشف خيارك</Heading>
+                <h2 className="tracking-normal text-sm md:text-base mt-4 text-purple-950">
                     مع حاسبة نسبه، يمكنك معرفة خيارات التمويل الخاص بك بكل سهولة
                 </h2>
             </Container>
@@ -85,7 +85,7 @@ function Header() {
                             {/* Card 2: Avg. Open Rate */}
                             <div className="overflow-hidden rounded-lg bg-gray-50 px-2 py-3  md:px-2 md:py-4  shadow">
                                 <p className="truncate py-1 text-sm font-normal text-purple-800">تمويل عقاري</p>
-                                <div className="py-2 grid grid-cols-2 item-start">
+                                <div className="pt-2 pb-4 grid grid-cols-2 items-start">
                                     <p className="mt-3 text-sm font-normal text-purple-950">لمدة 15 سنة</p>
                                     <p className="mt-3 text-sm font-semibold text-purple-950">3.80%</p>
                                     <p className="mt-3 text-sm font-normal text-purple-950">لمدة 20 سنة</p>
@@ -148,6 +148,41 @@ function CalculatorForm()  {
         { id: 'الخطوة ٢', name: 'تفاصيل بياناتك', href: '#', status: currentStep > 2 ? 'complete' : currentStep === 2 ? 'current' : 'upcoming' },
         { id: 'الخطوة ٣', name: 'النتيجة', href: '#', status: currentStep === 3 ? 'current' : 'upcoming' },
     ];
+
+    useEffect(() => {
+        const handleBackButton = () => {
+            if (currentStep === 2) {
+                setCurrentStep(1); // Go back to Step 1
+                setShowManualForm(false);
+                setShowAutoForm(false);
+            } else if (currentStep === 3) {
+                setCurrentStep(1); // Reset to Step 1 and clear values
+                setSelectedObjective(null);
+                setSelectedLoanType(null);
+                setSelectedEmploymentStatus(null);
+                setShowManualForm(false);
+                setShowAutoForm(false);
+                setSalary('');
+                setInterestRate('');
+                setKnownLoanAmount('');
+                setResults([]);
+                setIsNextStepDisabled(false);
+            } else {
+                // Default behavior (if on Step 1 or homepage)
+                window.history.back();
+            }
+        };
+
+        // Push an entry to the browser history to intercept back button
+        window.history.pushState(null, '', window.location.pathname);
+
+        window.addEventListener('popstate', handleBackButton);
+
+        // Cleanup listener on unmount
+        return () => {
+            window.removeEventListener('popstate', handleBackButton);
+        };
+    }, [currentStep]); // Rerun effect if currentStep changes
 
     const renderProgressBar = () => (
 
@@ -791,13 +826,13 @@ function ManualCalculation (inputData) {
 
         if (selectedLoanType === 'personal' && selectedEmploymentStatus === 'employee') {
             const maxMonthlyInstallment = salary * 0.33;
-            maxLoan = (maxMonthlyInstallment * tenorInMonths) / 1.1;
+            maxLoan = (maxMonthlyInstallment * tenorInMonths) / 1.07;
         } else if (selectedLoanType === 'personal' && selectedEmploymentStatus === 'retiree') {
             const maxMonthlyInstallment = salary * 0.25;
-            maxLoan = (maxMonthlyInstallment * tenorInMonths) / 1.1;
+            maxLoan = (maxMonthlyInstallment * tenorInMonths) / 1.07;
         } else if (selectedLoanType === 'house') {
             const maxMonthlyInstallment = salary * 0.65;
-            maxLoan = (maxMonthlyInstallment * tenorInMonths) / 1.1;
+            maxLoan = (maxMonthlyInstallment * tenorInMonths) / 1.07;
         } else {
             throw new Error("Unsupported loan type or employment status");
         }
