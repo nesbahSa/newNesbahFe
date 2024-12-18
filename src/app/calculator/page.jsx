@@ -322,7 +322,7 @@ function CalculatorForm()  {
                                         {objective.map((objective) => (
 
 
-                                                <div key={objective.id} className="flex items-start">
+                                                <div key={objective.id} className="flex items-center">
                                                     <input
                                                         id={objective.id}
                                                         name="objective-method"
@@ -351,7 +351,7 @@ function CalculatorForm()  {
                                         <legend className="text-sm font-semibold text-purple-950">ما نوع التمويل؟</legend>
                                         {loanType.map((loan) => (
 
-                                                <div key={loan.id} className="flex items-start">
+                                                <div key={loan.id} className="flex items-center">
                                                     <input
                                                         id={loan.id}
                                                         name="loanType"
@@ -380,7 +380,7 @@ function CalculatorForm()  {
                                             ما هي حالتك الوظيفية؟
                                         </legend>
                                         {employmentStatus.map((status) => (
-                                            <div key={status.id} className="flex items-start">
+                                            <div key={status.id} className="flex items-center">
                                                 <input
                                                     id={status.id}
                                                     name="employmentStatus"
