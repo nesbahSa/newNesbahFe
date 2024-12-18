@@ -350,7 +350,7 @@ function CalculatorForm()  {
                                     <div className="mt-8 grid sm:grid-cols-3 gap-4 px-4">
                                         <legend className="text-sm font-semibold text-purple-950">ما نوع التمويل؟</legend>
                                         {loanType.map((loan) => (
-                                            <div className="flex flex-col gap-y-4">
+
                                                 <div key={loan.id} className="flex items-start">
                                                     <input
                                                         id={loan.id}
@@ -368,7 +368,7 @@ function CalculatorForm()  {
                                                         {loan.title}
                                                     </label>
                                                 </div>
-                                            </div>
+
                                         ))}
                                     </div>
                                 </fieldset>
