@@ -321,7 +321,7 @@ function CalculatorForm()  {
                                         <legend className="text-sm font-semibold text-purple-950">طريقة الاحتساب؟</legend>
                                         {objective.map((objective) => (
 
-                                            <div className="flex flex-col gap-y-4">
+
                                                 <div key={objective.id} className="flex items-start">
                                                     <input
                                                         id={objective.id}
@@ -340,7 +340,7 @@ function CalculatorForm()  {
                                                         {objective.title}
                                                     </label>
                                                 </div>
-                                            </div>
+
 
                                         ))}
                                     </div>
@@ -853,7 +853,6 @@ function AutoCalculation(inputData) {
     tenorOptions.forEach((option) => {
         const tenorInYears = parseInt(option.id);
         const tenorInMonths = tenorInYears * 12;
-
         const monthlyInterestRate = interestRate / 12 / 100;
 
         const mandatory = knownLoanAmount / tenorInMonths;
