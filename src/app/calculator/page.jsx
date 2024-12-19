@@ -27,13 +27,13 @@ const loanType = [
 ]
 
 const homeTenor = [
-    {id: '5', title: '5 سنين'},
-    {id: '10', title: '10 سنين'},
-    {id: '15', title: '15 سنين'},
-    {id: '20', title: '20 سنين'},
-    {id: '25', title: '25 سنين'},
-    {id: '30', title: '30 سنين'},
-]
+    { id: '5', title: '5 سنين', interestRate: 3.0 },
+    { id: '10', title: '10 سنين', interestRate: 3.4 },
+    { id: '15', title: '15 سنين', interestRate: 3.8 },
+    { id: '20', title: '20 سنين', interestRate: 4.2 },
+    { id: '25', title: '25 سنين', interestRate: 4.65 },
+    { id: '30', title: '30 سنين', interestRate: 5.0 },
+];
 
 const personalTenor = [
     {id: '1', title: '1 سنين'},
@@ -615,7 +615,7 @@ function CalculatorForm()  {
                                         </fieldset>
                                     </div>
 
-                                    {/* Loan Amount Field */}
+
                                     <div className="flex items-center justify-center gap-x-6  mb-8 mt-10">
                                         <button
                                             type="submit"
@@ -822,6 +822,11 @@ function ManualCalculation (inputData) {
         const tenorInYears = parseInt(option.id); // Convert tenor ID to years
         const tenorInMonths = tenorInYears * 12; // Convert tenor to months
 
+        // Determine effective interest rate
+        let effectiveInterestRate = selectedLoanType === 'house'
+            ? option.interestRate // Use predefined interest rate for house loans
+            : interestRate;
+
         let maxLoan;
 
         if (selectedLoanType === 'personal' && selectedEmploymentStatus === 'employee') {
@@ -837,16 +842,16 @@ function ManualCalculation (inputData) {
             throw new Error("Unsupported loan type or employment status");
         }
 
-        const monthlyInterestRate = interestRate / 12 / 100;
+        const monthlyInterestRate = effectiveInterestRate / 12 / 100;
 
         const mandatory = maxLoan / tenorInMonths;
-        const monthlyInterest = (maxLoan * (interestRate / 100)) / tenorInMonths;
+        const monthlyInterest = (maxLoan * (effectiveInterestRate / 100)) / tenorInMonths;
         const EMI = (maxLoan * monthlyInterestRate * Math.pow((1 + monthlyInterestRate), tenorInMonths)) /
             (Math.pow((1 + monthlyInterestRate), tenorInMonths) - 1);
 
         const totalAmountRepaid = EMI * tenorInMonths;
-        const totalInterestPaid = totalAmountRepaid - maxLoan;
-        const percentageOfInterest = (totalInterestPaid / totalAmountRepaid) * 100;
+        const totalInterestPaid = maxLoan / 100 * effectiveInterestRate * tenorInYears ;
+        const percentageOfInterest = effectiveInterestRate * tenorInYears;
 
         // Push calculated result for this tenor into the array
         allTenorResults.push({
@@ -887,17 +892,21 @@ function AutoCalculation(inputData) {
     // Loop through each tenor and calculate details
     tenorOptions.forEach((option) => {
         const tenorInYears = parseInt(option.id);
-        const tenorInMonths = tenorInYears * 12;
-        const monthlyInterestRate = interestRate / 12 / 100;
+        const tenorInMonths = tenorInYears / 12;
+
+        let effectiveInterestRate = selectedLoanType === 'house'
+            ? option.interestRate // Use predefined interest rate for house loans
+            : interestRate;
+
+        const monthlyInterestRate = effectiveInterestRate / 12 / 100;
 
         const mandatory = knownLoanAmount / tenorInMonths;
-        const monthlyInterest = (knownLoanAmount * (interestRate / 100)) / tenorInMonths;
-        const EMI = (knownLoanAmount * monthlyInterestRate * Math.pow((1 + monthlyInterestRate), tenorInMonths)) /
-            (Math.pow((1 + monthlyInterestRate), tenorInMonths) - 1);
+        const monthlyInterest = (knownLoanAmount * (effectiveInterestRate / 100)) / tenorInMonths;
+        const EMI = (knownLoanAmount / 100 * effectiveInterestRate) / tenorInMonths;
 
         const totalAmountRepaid = EMI * tenorInMonths;
-        const totalInterestPaid = totalAmountRepaid - knownLoanAmount;
-        const percentageOfInterest = (totalInterestPaid / totalAmountRepaid) * 100;
+        const totalInterestPaid = knownLoanAmount / 100 * effectiveInterestRate * tenorInYears ;
+        const percentageOfInterest = effectiveInterestRate * tenorInYears;
 
         // Push calculated result for this tenor into the array
         allTenorResults.push({
