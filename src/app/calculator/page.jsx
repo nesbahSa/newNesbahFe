@@ -61,11 +61,11 @@ function Header() {
                     <p className="text-xs font-medium md:text-sm text-purple-800">
                         حالة السوق الحالية :
                     </p>
-                <span className="inline-flex items-center gap-x-1.5 rounded-md bg-red-100 px-3 py-1 text-xs font-medium text-red-700">
-                <svg viewBox="0 0 6 6" aria-hidden="true" className="size-1.5 fill-red-500">
+                <span className="inline-flex items-center gap-x-1.5 rounded-md bg-red-100 px-3 py-1 text-xs font-medium text-yellow-800">
+                <svg viewBox="0 0 6 6" aria-hidden="true" className="size-1.5 fill-yellow-500">
                   <circle r={3} cx={3} cy={3} />
                 </svg>
-                مرتفعة
+                متوسطة
               </span>
                 </div>
                 <div className="flex items-center justify-center bg-white px-4 sm:px-6 lg:px-8">
