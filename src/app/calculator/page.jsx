@@ -50,7 +50,7 @@ function Header() {
     return (
         <div className="text-center">
             <Container className="mt-16">
-                <Heading className="tracking-wide text-purple-950" as="h1">أكتشف خيارك</Heading>
+                <Heading className="tracking-wide text-purple-600" as="h1">أكتشف خيارك</Heading>
                 <h2 className="tracking-normal text-sm md:text-base mt-4 text-purple-950">
                     مع حاسبة نسبه، يمكنك معرفة خيارات التمويل الخاص بك بكل سهولة
                 </h2>
