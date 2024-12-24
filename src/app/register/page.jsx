@@ -52,8 +52,10 @@ export default function Register() {
             const data = await response.json();
             if (response.ok) {
                 setIsSuccess(true);
+                console.log("Registration Successful");
             } else {
                 setIsSuccess(false);
+                console.log("Registration failed");
             }
 
         } catch (error) {
