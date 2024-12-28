@@ -18,17 +18,27 @@ export default function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-
     const [passwordError, setPasswordError] = useState('');
-
     const [isOpen, setIsModalOpen] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [usernameError, setUsernameError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [modalMessage, setModalMessage] = useState("");
+
+
+    const errorTranslations = {
+        "A user with that username already exists.": "يوجد حساب بالفعل بهذه البيانات.يرجى تسجيل الدخول أو استخدام بيانات مختلفة لإنشاء حساب جديد.",
+        "This password is too common.": "كلمة المرور الخاصة بك ضعيفة. يُوصى بأن تحتوي كلمة المرور على 8 أحرف على الأقل ورقم.",
+    };
+
+
+
 
     const handleRegister = async (e) => {
         e.preventDefault();
 
         if (password !== confirmPassword) {
-            setPasswordError('Passwords do not match. Please try again.');
+            setPasswordError('كلمة المرور غير متطابقة');
             return;
         } else {
             setPasswordError('');
@@ -50,12 +60,39 @@ export default function Register() {
             });
 
             const data = await response.json();
+
             if (response.ok) {
                 setIsSuccess(true);
-                console.log("Registration Successful");
+                setModalMessage('يرجى تفعيل حسابك من خلال النقر على الرابط المرسل إلى بريدك الإلكتروني.');
             } else {
                 setIsSuccess(false);
-                console.log("Registration failed");
+                const errorKey = Object.keys(data.errors)[0]; // Get the first error field
+                const errorMessage = data.errors[errorKey][0]; // Get the first error message
+                const translatedMessage = errorTranslations[errorMessage] || "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.";
+                setModalMessage(translatedMessage);
+            }
+        } catch (error) {
+            console.error('Error during registration:', error);
+            setIsSuccess(false);
+            setModalMessage('يرجى تفعيل حسابك من خلال النقر على الرابط المرسل إلى بريدك الإلكتروني.');
+        } finally {
+            setIsModalOpen(true);
+        }
+
+        /*try {
+            const response = await fetch('https://portal.nesbah.com.sa/account/register/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                setIsSuccess(true);
+                console.log("registration successful");
+            }
+            else {
+                setIsSuccess(false);
+                console.log("registration failed");
             }
 
         } catch (error) {
@@ -63,7 +100,7 @@ export default function Register() {
             setIsSuccess(false);
         } finally {
             setIsModalOpen(true);
-        }
+        }*/
     };
 
     return (
@@ -92,15 +129,32 @@ export default function Register() {
 
                         <Field className="mt-8 space-y-3">
                             <Label className="text-sm/5 font-medium">اسم المستخدم</Label>
-                            <input
-                                type="text"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                required
-                                placeholder="اسم المستخدم"
-                                className="block w-full rounded-lg border shadow px-4 py-2"
-                            />
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    value={username}
+                                    onChange={(e) => {
+                                        const inputValue = e.target.value;
+                                        if (!inputValue.includes(' ')) {
+                                            setUsername(inputValue.replace(/\s/g, '')); // Remove spaces
+                                            setUsernameError(false); // Remove warning if no spaces are present
+                                        } else {
+                                            setUsernameError(true); // Show warning if spaces are present
+                                        }
+                                    }}
+                                    required
+                                    placeholder="اسم المستخدم"
+                                    className={`block w-full rounded-lg border px-4 py-2 ${
+                                        usernameError ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'shadow'
+                                    }`}
+                                />
+                                {usernameError && (
+                                    <p className="absolute text-red-500 text-sm mt-1">اسم المستخدم يجب ان لا يحتوي على مسافات</p>
+                                )}
+                            </div>
                         </Field>
+
+
 
                         <Field className="mt-8 space-y-3">
                             <Label className="text-sm/5 font-medium">البريد الإلكتروني</Label>
@@ -120,10 +174,19 @@ export default function Register() {
                                 <input
                                     type={showPassword ? 'text' : 'password'}
                                     value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    onChange={(e) => {
+                                        setPassword(e.target.value);
+                                        if (e.target.value.length < 8) {
+                                            setErrorMessage('يُوصى بأن تحتوي على كلمة مرور على 8 أحرف على الأقل ورقم.');
+                                        } else {
+                                            setErrorMessage('');
+                                        }
+                                    }}
                                     required
                                     placeholder="كلمة المرور"
-                                    className="block w-full rounded-lg border shadow ring-1 ring-black/10 pr-12 px-4 py-2"
+                                    className={`block w-full rounded-lg border shadow ring-1 px-4 py-2 pr-12 ${
+                                        errorMessage ? 'border-red-500 ring-red-500' : 'ring-black/10'
+                                    }`}
                                 />
                                 <button
                                     type="button"
@@ -137,7 +200,11 @@ export default function Register() {
                                     )}
                                 </button>
                             </div>
+                            {errorMessage && (
+                                <p className="text-red-500 text-sm mt-1">{errorMessage}</p>
+                            )}
                         </Field>
+
 
                         <Field className="mt-8 space-y-3 relative">
                             <Label className="text-sm/5 font-medium">تأكيد كلمة المرور</Label>
@@ -202,12 +269,11 @@ export default function Register() {
                 </div>
             </div>
 
-
-
             <RegistrationModal
                 isOpen={isOpen}
                 onClose={() => setIsModalOpen(false)}
                 isSuccess={isSuccess}
+                modalMessage={modalMessage}
             />
         </main>
     );
