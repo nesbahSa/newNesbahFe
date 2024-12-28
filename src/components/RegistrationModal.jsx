@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { CheckIcon, XCircleIcon } from '@heroicons/react/24/outline' // Import failure icon
 
-export default function FormStatusModal({ isOpen, onClose, isSuccess }) {
+export default function FormStatusModal({ isOpen, onClose, isSuccess, modalMessage }) {
 
     const handleButtonClick = () => {
         if (isSuccess) {
@@ -13,6 +13,8 @@ export default function FormStatusModal({ isOpen, onClose, isSuccess }) {
             onClose();
         }
     };
+
+
 
     return (
         <Dialog open={isOpen} onClose={onClose} className="relative z-10">
@@ -40,12 +42,15 @@ export default function FormStatusModal({ isOpen, onClose, isSuccess }) {
                                     {isSuccess ? 'تم التسجيل بنجاح' : 'فشل في التسجيل'}
                                 </DialogTitle>
                                 <div className="mt-2">
+                                    <p className="text-sm text-gray-500">{modalMessage}</p>
+                                </div>
+                                {/*<div className="mt-2">
                                     <p className="text-sm text-gray-500">
                                         {isSuccess
                                             ? 'يرجى تفعيل حسابك من خلال النقر على الرابط المرسل إلى بريدك الإلكتروني.'
                                             : 'يوجد حساب بالفعل بهذه البيانات.يرجى تسجيل الدخول أو استخدام بيانات مختلفة لإنشاء حساب جديد.'}
                                     </p>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                         <div className="mt-5 sm:mt-6">
